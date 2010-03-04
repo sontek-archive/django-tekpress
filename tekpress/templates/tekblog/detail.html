@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load comments %}
+    {% load tagging_tags %}
+
+    {% if entry %}
+    <div class="title"> 
+        <h1 class="green-header">{{ entry.title }}</h1>
+        {% tags_for_object entry as tag_list %}
+        Tags:
+        {% for tag in tag_list %}
+            {{ tag }}
+        {% endfor %}
+    </div>
+    <div class="content">
+        {{ entry.html_content|safe }}
+        Comments<br />
+        {% render_comment_list for entry %}
+        <br />
+        {% get_comment_form for entry as form %}
+        <form action="{% comment_form_target %}" method="post">
+            {{ form }}
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ entry.get_absolute_url }}" />
+            <input class="submit-post" type="submit" value="Post" name="post" />
+            <input class="submit-preview" type="submit" value="Preview" name="preview" />
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}
+

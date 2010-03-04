@@ -1,0 +1,15 @@
+h2. Quick Start
+
+The quick start assumes basic familiarity with vitualenv, virtualenv wrapper.
+
+* virtualenv myblog --no-site-packages
+* source myblog/bin/active
+* cd myblog
+* git clone git://github.com/sontek/django-tekpress.git
+* cd django-tekpress/tekpress
+* pip install -r stable-requirements.txt
+* ... wait a bit
+* mv local_settings.py.template local_settings.py
+* ./manage.py syncdb
+* .manage.py loaddata fixtures/test_data.json
+* ./manage.py runserver

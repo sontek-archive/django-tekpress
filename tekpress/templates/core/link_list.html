@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load get_latest_content %}
+
+{% block content %}
+    <div id="main-body-left">
+        <img src="{{ MEDIA_URL}}/media/images/slogan.png" alt="Changing the world with Python, Vim,
+        and Linux" /><br />
+        <div class="list-content">
+            <h4 class="green-header">
+                <a href="http://feeds.feedburner.com/sontek"><img src="{{ MEDIA_URL}}/media/images/social/feed.png" alt="" class="rss" /></a>
+                Recent Blog Posts</h4>
+            <div>
+                <ul>
+                    {% get_latest_content tekblog.entry 3 as latest_entries %}
+                    {% if latest_entries %}
+                        {% for entry in latest_entries %}
+                        <li><h4 class="list-title">
+                            <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+                            </h4>
+                            <div class="list-content">
+                                {{ entry.content|truncatewords:30 }}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    {% else %}
+                        No new entries
+                    {% endif %}
+                </ul>
+            </div>
+            <h4 class="green-header">Life Stream</h4>
+            <div>
+                <ul>
+                    {% get_latest_content lifestream.item 10 as latest_items %}
+                    {% if latest_items %}
+                        {% for item in latest_items %}
+                        <li>
+                            <div class="list-content ">
+                                <img src="{{ MEDIA_URL }}/media/images/social/{{ item.plugin_name|lower }}.png" alt="" />
+                                {{ item.content|truncatewords:30 }}
+                                [<a href="{{ item.permalink }}" target="_blank">{{ item.author }}</a>]
+                            </div>
+                        </li>
+                        {% endfor %}
+                    {% else %}
+                        No new entries
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="main-body-right">
+        <img src="{{ MEDIA_URL }}/media/images/sontek-in-barcelona.png" alt=""/><br />
+        <a href="http://feeds.feedburner.com/sontek"><img src="{{ MEDIA_URL }}/media/images/social/feed.png" alt=""/></a>
+        {% for link in object_list %}
+        <a href="{{ link.url }}" target="_blank"><img src="{{ link.image_url }}" alt="{{ link.title }}" /></a>
+        {% endfor %}
+    </div>
+{% endblock %}

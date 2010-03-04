@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load comments %}
+    {% load tagging_tags %}
+
+    {% if entries %}
+        {% for entry in entries %}
+        <div class="title">
+            <h1 class="green-header"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h1>
+            {% tags_for_object entry as tag_list %}
+            Tags:
+            {% for tag in tag_list %}
+                {{ tag }}
+            {% endfor %}
+            <br />
+            {% get_comment_count for entry as comment_count %}
+            {{ comment_count }} Comments
+        </div>
+        <div class="content">
+            {{ entry.html_content|safe }}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No entries are available.</p>
+    {% endif %}
+{% endblock %}
+
