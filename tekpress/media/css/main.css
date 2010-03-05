@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+pre {
+    color: #000;
+    background-color: #CCC;
+}
+
 img {
     border: 0;
 }
@@ -136,4 +141,8 @@ label[htmlFor="id_honeypot"] {
 
 label[for="id_honeypot"] {
  display:  none;
+}
+.errorlist {
+    background-color: #FF0000;
+    border: solid 1px #FFF;
 }
