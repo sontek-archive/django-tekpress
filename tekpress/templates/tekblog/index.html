@@ -3,8 +3,8 @@
     {% load comments %}
     {% load tagging_tags %}
 
-    {% if entries %}
-        {% for entry in entries %}
+    {% if pager.object_list %}
+        {% for entry in pager.object_list %}
         <div class="title">
             <h1 class="green-header"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h1>
             {% tags_for_object entry as tag_list %}
@@ -20,6 +20,14 @@
             {{ entry.html_content|safe }}
         </div>
         {% endfor %}
+        {% if pager.has_next %}
+            {% url tekblog_index pager.next_page_number as next_url %} 
+            <a href="{{ next_url }}">Older</a>
+        {% endif %}
+        {% if pager.has_previous %}
+            {% url tekblog_index pager.previous_page_number as previous_url %} 
+            <a href="{{ previous_url }}">Newer</a>
+        {% endif %}
     {% else %}
         <p>No entries are available.</p>
     {% endif %}
