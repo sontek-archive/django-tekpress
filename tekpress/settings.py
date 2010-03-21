@@ -10,6 +10,7 @@ TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 SECRET_KEY = '@9u-$6ee3x%uarcbn+c!4fw)nfb*#wnd(his&+m14tna1f7sk*'
+COMMENTS_APP='tekrecaptcha'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
@@ -53,6 +54,7 @@ INSTALLED_APPS = (
     'contact_form',
     'debug_toolbar',
     'tekblog',
+    'tekrecaptcha',
 )
 
 try:
