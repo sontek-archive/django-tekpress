@@ -5,8 +5,8 @@ from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'', include('tekblog.urls')),
     (r'^admin/', include(admin.site.urls)),
+    (r'', include('tekblog.urls')),
 )
 
 if settings.DEBUG:
