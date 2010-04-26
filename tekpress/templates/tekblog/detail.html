@@ -15,7 +15,7 @@
     <div class="content">
         {{ entry.html_content|safe }}
         <hr />
-        Comments<br />
+        <h2>Comments</h2><br />
         {% render_comment_list for entry %}
         <br />
         {% get_comment_form for entry as form %}
