@@ -10,7 +10,12 @@ TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 SECRET_KEY = '@9u-$6ee3x%uarcbn+c!4fw)nfb*#wnd(his&+m14tna1f7sk*'
-COMMENTS_APP='tekrecaptcha'
+#COMMENTS_APP='tekrecaptcha'
+
+#HAYSTACK_SITECONF = 'tekpress.search_sites'
+#HAYSTACK_SEARCH_ENGINE = 'whoosh'
+#HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'haystack')
+
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
@@ -60,7 +65,7 @@ INSTALLED_APPS = (
 )
 
 try:
+   from tekblog.settings import * 
    from local_settings import *
 except ImportError:
    pass
-
