@@ -10,11 +10,7 @@ TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 SECRET_KEY = '@9u-$6ee3x%uarcbn+c!4fw)nfb*#wnd(his&+m14tna1f7sk*'
-#COMMENTS_APP='tekrecaptcha'
-
-#HAYSTACK_SITECONF = 'tekpress.search_sites'
-#HAYSTACK_SEARCH_ENGINE = 'whoosh'
-#HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'haystack')
+COMMENTS_APP='tekrecaptcha'
 
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -23,6 +19,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'navbar.context_processors.navbar',
     'navbar.context_processors.navbars',
     'navbar.context_processors.crumbs',
+    'tekblog.context_processors.search_form',
 )
 
 TEMPLATE_LOADERS = (
@@ -41,6 +38,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_DIRS = (
+  '/home/sontek/code/sontek/tekpress_templates/',
   os.path.join(PROJECT_ROOT, "templates"),
 )
 
@@ -62,6 +60,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'tekblog',
     'tekrecaptcha',
+    'haystack',
 )
 
 try:
