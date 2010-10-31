@@ -20,7 +20,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'navbar.context_processors.navbars',
     'navbar.context_processors.crumbs',
     'tekblog.context_processors.search_form',
-    'tekpress.context_processors.current_site',
+    'tekextensions.context_processors.current_site',
 )
 
 TEMPLATE_LOADERS = (
@@ -62,6 +62,7 @@ INSTALLED_APPS = (
     'tekblog',
     'tekrecaptcha',
     'haystack',
+    'tekextensions',
 )
 
 try:
