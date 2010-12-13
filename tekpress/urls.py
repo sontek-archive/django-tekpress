@@ -6,6 +6,7 @@ from tekpress.core.views import server_error
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^admin/filebrowser/', include('filebrowser.urls')),
     (r'^admin/', include(admin.site.urls)),
 )
 

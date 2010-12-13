@@ -10,6 +10,7 @@ django-navbar
 django-tagging
 django-haystack
 django-admin-tools
+PIL
 wsgiref
 -e git+git@github.com:sontek/django-tekextensions.git#egg=django-tekextensions
 -e git+git@github.com:sontek/django-tekblog.git#egg=django-tekblog

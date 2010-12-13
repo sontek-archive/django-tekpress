@@ -17,6 +17,9 @@ HAYSTACK_SITECONF = 'tekblog.search_sites'
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
 HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'haystack')
 
+ADMIN_TOOLS_MENU = 'menu.MyMenu'
+#ADMIN_TOOLS_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
+
 IGNORABLE_404_ENDS = ('.ico', )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -27,6 +30,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'navbar.context_processors.crumbs',
     'tekblog.context_processors.search_form',
     'tekextensions.context_processors.current_site',
+    # for django-admin-tools
+    'django.core.context_processors.request',
 )
 
 TEMPLATE_LOADERS = (
@@ -57,7 +62,7 @@ INSTALLED_APPS = (
     # Ensure we have an awesome admin on top of our admin interface
     'admin_tools',
     'admin_tools.theming',
-#    'admin_tools.menu',
+    'admin_tools.menu',
 #    'admin_tools.dashboard',
     'django.contrib.admin',
     'django.contrib.comments',
