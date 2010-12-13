@@ -17,7 +17,7 @@ HAYSTACK_SITECONF = 'tekblog.search_sites'
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
 HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'haystack')
 
-ADMIN_TOOLS_MENU = 'menu.MyMenu'
+ADMIN_TOOLS_MENU = 'tekpress.menu.MyMenu'
 #ADMIN_TOOLS_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 
 IGNORABLE_404_ENDS = ('.ico', )
