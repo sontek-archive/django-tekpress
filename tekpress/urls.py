@@ -1,12 +1,12 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
 from django.conf import settings
+from tekpress.core.views import server_error
 
 admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
-    (r'', include('tekblog.urls')),
 )
 
 if settings.DEBUG:
@@ -19,3 +19,10 @@ if settings.DEBUG:
                                 serve,
                                 {'document_root': settings.MEDIA_ROOT}))
     del(_media_url, serve)
+    urlpatterns += patterns('',
+        (r'^500/$', server_error),
+    )
+
+urlpatterns += patterns('', 
+    (r'', include('tekblog.urls')),
+)
