@@ -4,6 +4,7 @@ pygments
 BeautifulSoup
 werkzeug
 recaptcha-client
+MySQL-python
 django-debug-toolbar
 django-extensions
 django-navbar
