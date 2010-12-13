@@ -39,7 +39,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_DIRS = (
-  '/home/sontek/code/sontek/tekpress_templates/',
   os.path.join(PROJECT_ROOT, "templates"),
 )
 
