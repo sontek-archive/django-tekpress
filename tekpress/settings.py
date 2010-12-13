@@ -48,6 +48,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    # Ensure we have an awesome admin on top of our admin interface
+    'admin_tools',
+    'admin_tools.theming',
+#    'admin_tools.menu',
+#    'admin_tools.dashboard',
     'django.contrib.admin',
     'django.contrib.comments',
     'django.contrib.flatpages',
@@ -62,6 +67,7 @@ INSTALLED_APPS = (
     'tekrecaptcha',
     'haystack',
     'tekextensions',
+    'filebrowser',
 )
 
 try:

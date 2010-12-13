@@ -1,0 +1,12 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}{{ block.super }}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}/jwysiwyg/css/jquery.wysiwyg.css" type="text/css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}/jwysiwyg/css/jquery.wysiwyg.modal.css" type="text/css" />
+    <script type="text/javascript" src="{{ MEDIA_URL }}/jwysiwyg/jquery.wysiwyg.js"></script>
+    <script type="text/javascript">
+        django.jQuery(document).ready(function () {
+            django.jQuery("textarea").wysiwyg();
+        });
+    </script>
+{% endblock %}
