@@ -1,0 +1,13 @@
+Django
+whoosh
+pygments
+BeautifulSoup
+django-debug-toolbar
+django-extensions
+django-navbar
+django-tagging
+django-haystack
+wsgiref
+-e git+git@github.com:sontek/django-tekextensions.git#egg=django-tekextensions
+-e git+git@github.com:sontek/django-tekblog.git#egg=django-tekblog
+-e git+git@github.com:sontek/django-tekrecaptcha.git#egg=django-tekrecaptcha
