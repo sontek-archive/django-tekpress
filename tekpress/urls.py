@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 )
 
+handler500 = server_error
+
 if settings.DEBUG:
     from django.views.static import serve
     _media_url = settings.MEDIA_URL

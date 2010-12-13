@@ -12,6 +12,12 @@ USE_I18N = True
 SECRET_KEY = '@9u-$6ee3x%uarcbn+c!4fw)nfb*#wnd(his&+m14tna1f7sk*'
 COMMENTS_APP = 'tekrecaptcha'
 
+# Search Settings
+HAYSTACK_SITECONF = 'tekblog.search_sites'
+HAYSTACK_SEARCH_ENGINE = 'whoosh'
+HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'haystack')
+
+IGNORABLE_404_ENDS = ('.ico', )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
