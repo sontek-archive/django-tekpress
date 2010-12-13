@@ -5,6 +5,8 @@ BeautifulSoup
 werkzeug
 recaptcha-client
 MySQL-python
+Markdown
+textile
 django-debug-toolbar
 django-extensions
 django-navbar
