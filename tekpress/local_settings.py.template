@@ -4,6 +4,13 @@ ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
 
+#TEMPLATE_DIRS = (
+#    # put your template directories here
+#    # '/home/sontek/blog_templates/',
+#)
+
+#MEDIA_ROOT = '/home/sontek/blog_templates/media/'
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -29,12 +36,4 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.template.TemplateDebugPanel',
     'debug_toolbar.panels.sql.SQLDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
-)
-
-### django-markup
-MARKUP_CHOICES = (
-	'none',	
-	'markdown',
-	'textile',
-	'restructuredtext',
 )
